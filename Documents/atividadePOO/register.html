@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aividade poo</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="/utils/register.js"></script>
+    <link rel="stylesheet" href="styles/global.css">
+
+    <style>
+        .container-input {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body id="background" class=" w-full h-screen flex items-center justify-center">
+    <div action="" class="text-white min-w-[450px] p-6 rounded bg-green-500 flex flex-col gap-3 items-center justify-center">
+        <div class="flex gap-4 items-center">
+            <img src="imagens/palmeiras.png" class="w-12" alt="">
+            <h1 class="text-4xl text-white font-semibold">Cadastro</h1>
+        </div>
+        <div class="container-input">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" class="text-black w-full p-3 bg-green-300 outline-none rounded">
+        </div>
+        <div class="container-input">
+            <label for="username">Nome de usuário:</label>
+            <input type="text" name="username" id="username" class="text-black w-full p-3 bg-green-300 outline-none rounded">
+        </div>
+        <div class="container-input">
+            <label for="username">Email:</label>
+            <input type="email" name="email" id="email" class="text-black w-full p-3 bg-green-300 outline-none rounded">
+        </div>
+        <div class="container-input">
+            <label for="username">Senha:</label>
+            <input type="password" name="senha" id="password" class="text-black w-full p-3 bg-green-300 outline-none rounded">
+        </div>
+        <button type="button" onclick="register()" class="w-full py-3 text-center hover:bg-green-700 bg-green-800 font-semibold rounded">Cadastrar</button>
+        <p class="text-left w-full">Já possui conta? <a href="login.html " class="text-blue-500">Entrar</a></p>
+    </div>
+</body>
+</html>

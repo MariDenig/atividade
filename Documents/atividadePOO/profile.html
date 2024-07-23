@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+    
+</style>
+
+<body>
+    <div id="background" class="w-full h-screen bg-green-700 p-7">
+        <div class="bg-green-100 rounded p-4 flex flex-col gap-2">
+            <div>
+                <img class="w-12" src="imagens/palmeiras.png" alt="">
+                <h1 class="font-semibold text-2xl" id="info"></h1>
+            </div>
+            <p>Esta é sua página pessoal, suas informações estão abaixo: </p>
+
+            <p id="nameMessage"></p>
+            <p id="usernameMessage"></p>
+            <p id="emailMessage"></p>
+
+            <button class="bg-red-500 py-2 text-white rounded font-semibold" onclick="localStorage.removeItem('user'); window.location.reload();">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (!localStorage.getItem("user")) {
+            window.location.href = "login.html"
+        }
+
+        console.log(user)
+
+        const message = document.getElementById("info");
+        message.innerHTML = `Olá, ` + user.name + ".";
+
+        const nameMessage = document.getElementById("nameMessage");
+        nameMessage.innerHTML = `<strong>Nome: </strong>` + user.name + ".";
+
+        const usernameMessage = document.getElementById("usernameMessage");
+        usernameMessage.innerHTML = `<strong>Nome usuário: </strong>` + user.username + ".";
+
+        const emailMessage = document.getElementById("emailMessage");
+        emailMessage.innerHTML = `<strong>Email: </strong>` + user.email + ".";
+    </script>
+</body>
+
+</html>
